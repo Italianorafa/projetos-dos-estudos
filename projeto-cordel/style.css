@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: passion-one;
+    src: url(fonts/Passion_One/PassionOne-Regular.ttf);
+}
+@font-face {
+    font-family: PO-bold;
+    src: url(fonts/Passion_One/PassionOne-Bold.ttf);
+}
+@font-face {
+    font-family: PO-black;
+    src: url(fonts/Passion_One/PassionOne-Black.ttf);
+}
+
+@font-face {
+    font-family: sriracha;
+    src: url(fonts/Sriracha/Sriracha-Regular.ttf);
+}
+
+html, body{
+    min-height: 100vh;
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+header>h1{
+    margin: 0px;
+    font-family: PO-bold, sans-serif;
+    font-size: 7.5vw;
+    padding-top: 50px;
+    font-variant: small-caps
+}
+header>h2{
+    font-size: 0.85em;
+    padding-bottom: 50px;
+}
+a{
+    color:white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+a:hover{
+    text-decoration: underline;
+}
+section{
+    padding: 10vh 0vh;
+    font-family: sriracha, Arial, Helvetica, sans-serif;
+    font-size: 3.5vw;
+    padding-left: 7.5%;
+    line-height: 2em;
+}
+section>p{
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.289);
+}
+.imagem{
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.344);
+}
+
+#joaninha{
+    background: white url(imagens/background001.jpg) center right no-repeat fixed;
+    background-size: cover;
+}
+.img{
+    display: inline-block;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.401);
+    padding: 5px
+}
+#livro{
+    background: black url(imagens/background002.jpg) bottom right no-repeat fixed;
+    background-size: cover;
+}
+footer{
+    
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+footer>p{
+    font-size: 1.5vw;
+    margin: 0px;
+    padding: 10px 0px;
+}
+

@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+/*"Young Serif", serif*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+/*"Outfit", sans-serif*/
+*{
+    --cor1: #F3E5D8;
+    --cor2: #FFFFFF;
+    --cor3: #FFF7FC;
+    --cor4: #74475C;
+    --cor5: #7F4C37;
+    padding: 0;
+    margin: 0;
+    box-shadow: border-box;
+}
+
+body{
+    font-family:"Outfit", sans-serif;
+    font-size: 16px;
+    margin: auto;
+    background-color: var(--cor2);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    min-width: 375px;
+    max-width: 500px;
+    padding: 15px;
+    
+}
+
+header{
+    width: 85%;
+    padding: 25px;
+}
+img{
+    width: 100%;
+    border-radius: 15px;
+}
+header>h1{
+    font-family: "Young Serif", serif;
+    font-size: 2.2em
+}
+main{
+    width: 85%;
+}
+main>aside{
+    background-color: var(--cor3);
+    width: 85%;
+    padding: 15px;
+    border-radius: 15px;
+}
+h2{
+    font-family: "Young Serif", serif;
+    color: var(--cor5)
+}
+h2#preparation{
+    color: #74475C;
+}
+ul,ol{
+    margin: 15px;
+    padding-left: 10px;
+}
+li{
+    padding-left: 10px;
+}
+ol>li::marker{
+    color: var(--cor5);
+    font-weight: bold;
+}
+ul>li::marker{
+    color: var(--cor5);
+    font-size: smaller;
+}
+ul#prep>li::marker{
+    color: var(--cor4);
+}
+main>article{
+    width: 85%;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.212);
+    margin-top: 10px;
+    padding: 15px;
+}
+main>article#nutri{
+    border: none;
+}
+table{
+    width: 100%;
+}
+tr{
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.212);
+}
+th{
+    font-weight: normal;
+}
+td{
+    color: var(--cor5);
+    font-weight: bolder;
+}

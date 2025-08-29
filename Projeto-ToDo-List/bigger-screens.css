@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 767px){
+    #filter{
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(3,1fr);
+    }
+    #filter button{
+        margin-top: 0
+    }
+    #todas{
+        grid-area: 1/2/-1/-2;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    #filter button{
+        margin-top: 3%;
+    }
+    #add, #pesquisa{
+        margin-bottom: 3%;
+    }
+}

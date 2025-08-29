@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bigger-screens.css" media="screen">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <title>TO-DO List</title>
+</head>
+<body>
+    <header>
+        <h1>TO-DO List</h1>
+    </header>
+    <main>
+        <input type="button" value="Adicionar Tarefa" id="add">
+        <div id="hidden">
+            <div class="conteudo-pop">
+                <h2>Adicionar nova tarefa</h2>
+                <input type="text" id="newtask" placeholder="Digite a nova tarefa" autofocus="on">
+                <div class="buttons">
+                    <button id="confirmar">Adicionar</button>
+                    <button id="fechar">Fechar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="filter">
+            <button id="concluidas">Concluidas</button>
+            <button id="progresso">Em progresso</button>
+            <button id="todas">Todas</button>
+        </div>
+        <div id="pesquisa">
+            <span class="material-symbols-outlined">search</span>
+            <input type="text" name="search" id="search">
+        </div>
+        <div id="list">
+            
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
