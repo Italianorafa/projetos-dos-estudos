@@ -3,16 +3,17 @@ import './popup.css'
 
 interface SettingsPopup{
     onClose: () => void;
-    onStart: (settings: {category: string, difficulty: string, amount: number}) => void;
+    onStart: (settings: {category: string, difficulty: string, amount: number, type: string}) => void;
 }
 
 function SettingsPopup({ onClose, onStart } : SettingsPopup){
     const [category, setCategory] = useState('');
     const [difficulty, setDifficulty] = useState('');
     const [amount, setAmount] = useState(10);
+    const [type, setType] = useState('');
 
     const Start = () => {
-        onStart({ category, difficulty, amount});
+        onStart({ category, difficulty, amount, type });
         onClose();
     }
 
@@ -68,7 +69,8 @@ function SettingsPopup({ onClose, onStart } : SettingsPopup){
 
                 <div className='setting'>
                     <label>Type:</label>
-                    <select name="type" id="type">
+                    <select name="type" id="type" onChange={(event) => setType(event.target.value)}>
+                        <option value="">Any type</option>
                         <option value="multiple">Multiple Choice</option>
                         <option value="booblean">True/False</option>
                     </select>
