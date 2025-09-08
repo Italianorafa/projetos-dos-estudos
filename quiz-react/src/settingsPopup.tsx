@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './popup.css'
 
 interface SettingsPopup{
@@ -72,7 +72,7 @@ function SettingsPopup({ onClose, onStart } : SettingsPopup){
                     <select name="type" id="type" onChange={(event) => setType(event.target.value)}>
                         <option value="">Any type</option>
                         <option value="multiple">Multiple Choice</option>
-                        <option value="booblean">True/False</option>
+                        <option value="boolean">True/False</option>
                     </select>
                 </div>
 

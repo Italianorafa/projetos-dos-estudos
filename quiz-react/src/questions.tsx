@@ -1,4 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+
+function decodeText(text: string){
+    const textArea = document.createElement('textarea');
+    textArea.innerHTML = text;
+    return textArea.value;
+}
 
 interface QuestionPage{
     questions:{
@@ -10,20 +16,22 @@ interface QuestionPage{
 }
 
 const QuestionPage:  React.FC<QuestionPage> = ({ questions, onAnswerSelected}) => {
-    const allAnswers = [...questions.incorrect_answers, questions.correct_answer].sort(() => Math.random() - 0.5);
+    const decodeQuestion = decodeText(questions.question)
+
+    const allAnswers = [...questions.incorrect_answers.map(decodeText), decodeText(questions.correct_answer)].sort(() => Math.random() - 0.5);
 
     const getAnswer = (answer: string) => {
-        const isCorrect = answer === questions.correct_answer;
+        const isCorrect = answer === decodeText(questions.correct_answer);
         onAnswerSelected(isCorrect);
     }
 
     return(
         <div id="question-container">
-            <h2>{decodeURIComponent(questions.question)}</h2>
+            <h2>{decodeQuestion}</h2>
             <div className="answers-grid">
                 {allAnswers.map((answer, index) => (
                     <button key={index} onClick={() => getAnswer(answer)}>
-                        {decodeURIComponent(answer)}
+                        {answer}
                     </button>
                 ))}
             </div>
