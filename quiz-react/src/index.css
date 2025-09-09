@@ -1,24 +1,42 @@
 :root {
 
-  --fundo: #2C3E50;
-  --texto: #ECF0F1;
+  --fundo: #ECF0F1;
+  --texto: #2C3E50;
   --erro: #E74C3C;
   --acerto: #2ECC71;
   --botoes: #3498DB;
   --detalhes: #F1C40F;
+  --nav: #8c929c;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: var(--texto);
-  background-color: var(--fundo);
+  
+  
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.darkMode{
+  --fundo: #2C3E50;
+  --texto: #ECF0F1;
+  --erro: #E74C3C;
+  --acerto: #2ECC71;
+  --botoes: #3498DB;
+  --detalhes: #F1C40F;
+  --nav: #2e4e6e;
+}
+
+.correct{
+  background-color: var(--acerto);
+}
+.wrong{
+  background-color: var(--erro);
 }
 
 a {
@@ -36,11 +54,33 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--fundo);
+  color: var(--texto);
+}
+header{
+  border: 3px solid red;
+  
+}
+header>nav{
+  height:35px;
+  background-color: var(--nav);
+  text-align: right;
+}
+.config{
+  background-color: transparent;
+  margin: 0;
+  height: 30px;
+  color: var(--texto);
+}
+.config:hover{
+  border: none;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3em;
   line-height: 1.1;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 button {
@@ -57,10 +97,8 @@ button {
 button:hover {
   border-color: var(--detalhes);
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
+
 
 @media (prefers-color-scheme: light) {
   :root {

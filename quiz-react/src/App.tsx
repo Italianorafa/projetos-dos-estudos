@@ -1,14 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { IoMdSettings } from "react-icons/io";
+import { MdDarkMode } from "react-icons/md";
 import './App.css'
 import SettingsPopup from './settingsPopup'
 import QuestionPage from './questions'
+import { GiConsoleController } from 'react-icons/gi';
 
 function App() {
   const [questions, setQuestions] = useState([]);
   const [showSettings, setShowSettings] = useState(false);
   const [questionIndex, setQuestionIndex] = useState (0);
   const [score, setScore] = useState(0);
-  
+  const [configs, setSettings] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const body = document.body;
+
+    if(!darkMode){
+      body.classList.add('darkMode');
+    }
+    else{
+      body.classList.remove('darkMode');
+    }
+  }, [darkMode])
 
   const OpenPopup = () => {
     setShowSettings(true);
@@ -43,12 +58,20 @@ function App() {
     catch(error){
       console.error('O erro foi:', error);
     }
+    setSettings(settings);
   }
 
   const comecar = (settings) => {
     console.log("configuracoes selecionadas:", settings)
     getQuestions(settings);
     setShowSettings(false);
+  }
+
+  const save = (settings) => {
+    setSettings(settings);
+    setShowSettings(false);
+    console.log('configuracoes salvas: ', settings);
+    console.log(configs);
   }
 
   const getAnswer = (isCorrect: boolean) => {
@@ -73,12 +96,16 @@ function App() {
   return (
     <>
       <header>
-        {questions.length === 0 && (<h1>Trivia Quiz</h1>)}
-        {questions.length === 0 && (<button onClick={OpenPopup}>Configure quiz</button>)}
+        <h1>Trivia Quiz</h1>
+        <nav>
+          <button onClick={() => setDarkMode(!darkMode)}className='config'><MdDarkMode /></button>
+          <button onClick={OpenPopup} className='config'><IoMdSettings /></button>
+        </nav>
+        
       </header>
       <main>
         
-        {showSettings && <SettingsPopup onStart={comecar} onClose={() => setShowSettings(false)}/>}
+        {showSettings && <SettingsPopup onStart={comecar} onSave={save} onClose={() => setShowSettings(false)}/>}
 
         {!showSettings && questions.length > 0 && questionIndex < questions.length && (
           <QuestionPage

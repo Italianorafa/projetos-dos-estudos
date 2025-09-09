@@ -21,6 +21,7 @@
 }
 select{
     width: 75%;
+    background-color: #2C3E50;
 }
 label{
     margin: 10px;
@@ -30,4 +31,7 @@ button{
 }
 .setting{
     text-align: right;
+}
+input{
+    background-color: #2C3E50;
 }

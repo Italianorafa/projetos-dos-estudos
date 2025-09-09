@@ -4,9 +4,10 @@ import './popup.css'
 interface SettingsPopup{
     onClose: () => void;
     onStart: (settings: {category: string, difficulty: string, amount: number, type: string}) => void;
+    onSave: (settings: {category: string, difficulty: string, amount: number, type: string}) => void;
 }
 
-function SettingsPopup({ onClose, onStart } : SettingsPopup){
+function SettingsPopup({ onClose, onStart, onSave } : SettingsPopup){
     const [category, setCategory] = useState('');
     const [difficulty, setDifficulty] = useState('');
     const [amount, setAmount] = useState(10);
@@ -14,6 +15,11 @@ function SettingsPopup({ onClose, onStart } : SettingsPopup){
 
     const Start = () => {
         onStart({ category, difficulty, amount, type });
+        onClose();
+    }
+
+    const save = () => {
+        onSave({ category, difficulty, amount, type })
         onClose();
     }
 
@@ -78,7 +84,7 @@ function SettingsPopup({ onClose, onStart } : SettingsPopup){
 
                 
                 <button onClick={Start}>Start quiz</button>
-                <button onClick={onClose}>Cancelar</button>
+                <button onClick={save}>Save</button>
                 
             </div>
         </div>
