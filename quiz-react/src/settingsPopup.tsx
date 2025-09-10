@@ -83,9 +83,8 @@ function SettingsPopup({ onClose, onStart, onSave } : SettingsPopup){
                 </div>
 
                 
-                <button onClick={Start}>Start quiz</button>
                 <button onClick={save}>Save</button>
-                
+                <button onClick={onClose}>Cancel</button>
             </div>
         </div>
     )
