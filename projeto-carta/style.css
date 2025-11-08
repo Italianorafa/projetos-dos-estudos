@@ -4,7 +4,7 @@
 *{
     --cor1: #A80032;
     --cor2: #F8F4F0;
-    --cor3: #333333;
+    --cor3: #1f1f1f;
     --cor4: #D4AF37;
     margin: 0;
     padding: 0;
@@ -16,7 +16,7 @@
 
 body{
     font-family: 'Cormorant Garamond', serif;
-    background-color: var(--cor2);
+    background-color: var(--cor1);
     color: var(--cor3);
     line-height: 2em;
     
@@ -27,16 +27,45 @@ header{
     text-align: center;
     margin-bottom: 20px;
     width: 100vw;
+    padding: 10px;
+    background-color: var(--cor1);
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    font-size: 1.8em;
+    color: var(--cor4);
+    
 }
 .border{
-    background-color: var(--cor1);
+    background-color: white;
     width: 135px;
-    padding-top: 10px;
+    height: auto;
+    padding: 10px 10px 15px 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transform: rotate(5deg);
+    position: relative;
 }
-
+.border-tape::before{
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(160%) translateY(15%) rotate(10deg);
+    width: 60px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: solid rgba(0, 0, 0, 0.1) 3px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    
+}
 main{
     margin: auto;
     background-color: var(--cor2);
     width: 80%;
-    height: 65vh;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 }
