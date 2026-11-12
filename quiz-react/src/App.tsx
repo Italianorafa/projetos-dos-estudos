@@ -5,6 +5,13 @@ import './App.css'
 import SettingsPopup from './settingsPopup'
 import QuestionPage from './questions'
 
+type Settings = {
+  category: string
+  difficulty: string
+  amount: number
+  type: string
+}
+
 function App() {
   const [questions, setQuestions] = useState([]);
   const [showSettings, setShowSettings] = useState(false);
@@ -12,7 +19,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [configs, setSettings] = useState({
     category: '',
-    difficuly: '',
+    difficulty: '',
     amount: 10,
     type: ''
   });
@@ -33,7 +40,7 @@ function App() {
     setShowSettings(true);
   }
   // https://opentdb.com/api.php?amount=10&category=19&difficulty=medium&type=multiple
-  const getQuestions = async (settings) => {
+  const getQuestions = async (settings?: Settings) => {
     const currentSettings = settings || configs;
     try{ 
       let url = "https://opentdb.com/api.php?"
@@ -69,14 +76,14 @@ function App() {
     setSettings(currentSettings);
   }
 
-  const comecar = (settings) => {
+  const comecar = (settings?: Settings) => {
     const currentSettings = settings || configs;
     console.log("configuracoes selecionadas:", currentSettings)
     getQuestions(currentSettings);
     setShowSettings(false);
   }
 
-  const save = (settings) => {
+  const save = (settings?: Settings) => {
     setSettings(settings);
     setShowSettings(false);
     console.log('configuracoes salvas: ', settings);
