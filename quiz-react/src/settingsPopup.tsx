@@ -3,20 +3,14 @@ import './popup.css'
 
 interface SettingsPopup{
     onClose: () => void;
-    onStart: (settings: {category: string, difficulty: string, amount: number, type: string}) => void;
     onSave: (settings: {category: string, difficulty: string, amount: number, type: string}) => void;
 }
 
-function SettingsPopup({ onClose, onStart, onSave } : SettingsPopup){
+function SettingsPopup({ onClose, onSave } : SettingsPopup){
     const [category, setCategory] = useState('');
     const [difficulty, setDifficulty] = useState('');
     const [amount, setAmount] = useState(10);
     const [type, setType] = useState('');
-
-    const Start = () => {
-        onStart({ category, difficulty, amount, type });
-        onClose();
-    }
 
     const save = () => {
         onSave({ category, difficulty, amount, type })

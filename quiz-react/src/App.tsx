@@ -83,7 +83,7 @@ function App() {
     setShowSettings(false);
   }
 
-  const save = (settings?: Settings) => {
+  const save = (settings: Settings) => {
     setSettings(settings);
     setShowSettings(false);
     console.log('configuracoes salvas: ', settings);
@@ -121,7 +121,7 @@ function App() {
       </header>
       <main>
         
-        {showSettings && <SettingsPopup onStart={comecar} onSave={save} onClose={() => setShowSettings(false)}/>}
+        {showSettings && <SettingsPopup onSave={save} onClose={() => setShowSettings(false)}/>}
 
         <div id='main-content'>
           {!showSettings && questions.length === 0 && questions.length === questionIndex && (
